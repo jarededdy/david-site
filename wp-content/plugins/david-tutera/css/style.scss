@@ -1,0 +1,177 @@
+// Sass Written by: Jared Eddy - https://jarededdy.io
+// Importing David Tutera Brand Fonts
+@import url('https://fonts.googleapis.com/css?family=Oswald:300,500|Playfair+Display');
+// Declaring David Tutera Brand Styles
+$dt-gray: #7a7e83;
+$dt-dark-blue: #073f5d;
+$dt-medium-blue: #6eb0c7;
+$dt-light-blue: #c3dbe7;
+$dt-gold: #f1c36d;
+$dt-light-gray:#f0ede8;
+$dt-headers: 'Playfair Display',
+serif;
+$dt-body:'Oswald',
+sans-serif;
+// Setting David Tutera Brand Fonts
+html body {
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: $dt-headers;
+    }
+    p,
+    a,
+    span {
+        font-family: $dt-body;
+        font-weight: 300;
+    }
+    strong {
+        font-weight: 500 !important;
+    }
+}
+
+// General Website Element Styles
+@mixin quote-bar {
+    content: ""; // This is required to make the ::after psuedo element work
+    display: block; // This makes sure it shows up
+    margin: 0 auto; // centers the element
+    border-bottom: 3px solid #fff;
+    padding-top: 5px;
+    width: 35px;
+}
+
+@mixin david-quote-text {
+    font-family: $dt-headers;
+    margin-bottom: 15px;
+}
+
+@mixin david-quote-author {
+    font-family: $dt-body;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 2px;
+}
+
+span.david-quote-author:after {
+    @include quote-bar;
+}
+
+.elementor-sticky--active {
+    background-color: rgba(0, 0, 0, .5);
+}
+
+// Top Bar Styles
+a.top-bar-link {
+    font-size: 15px;
+    color: $dt-gray;
+}
+
+// Footer Styles
+.footer-vsg-link {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    p.footer-vsg-link-text {
+        float: left;
+        margin-bottom: 0px;
+        margin-right: 25px;
+    }
+    a.footer-vsg-link-logo {
+        float: left;
+        img {
+            max-width: 200px;
+            vertical-align: middle;
+        }
+    }
+}
+
+// Home Slider Styles
+// First Slide Styles Begin
+#slick-slide00 {
+    .slick-slide-bg {
+        background-position: 50% 35%;
+    }
+    .slick-slide-inner .elementor-slide-content {
+        margin-right: 60%;
+        margin-left: 10%;
+    }
+}
+
+// First Slide Styles End
+// Second Slide Styles
+#slick-slide01 {
+    .slick-slide-bg {
+        background-position: top;
+    }
+    .slick-slide-inner .elementor-slide-content {
+        margin-right: 25%;
+        margin-left: 45%
+    }
+}
+
+// Second Slide Styles End
+// Third Slide Styles Begin
+#slick-slide02 {
+    .slick-slide-inner .elementor-slide-content .elementor-slide-description {
+        font-size: 1.5em;
+    }
+}
+
+.dream-bigger-section {
+    background-position: 95% -26% !important;
+}
+
+.home-box-quote {
+    font-size: 2em;
+    .david-quote-text {
+        font-family: $dt-headers;
+        color: $dt-dark-blue;
+        margin-bottom: 15px;
+    }
+    .david-quote-author {
+        font-family: $dt-body;
+        color: $dt-gold;
+        text-transform: uppercase;
+        font-size: .7em;
+        font-weight: 500;
+        letter-spacing: 2px;
+    }
+    span.david-quote-author:after {
+        @include quote-bar;
+        border-bottom-color: $dt-gold;
+    }
+}
+
+.masonry-slider {
+    .slick-slider .slick-track {
+        cursor: grab;
+    }
+    .slick-slider .slick-track:active {
+        cursor: grabbing;
+    }
+    .slick-initialized .slick-slide {
+        width: auto !important;
+    }
+    .elementor-slick-slider .slick-slide img {
+        height: 520px;
+    }
+}
+
+.parallax-quote-wrapper {
+    font-size: 1.5em;
+    .david-quote-text {
+        @include david-quote-text;
+        color: #fff;
+    }
+    .david-quote-author {
+        @include david-quote-author;
+        color: #fff;
+    }
+    span.david-quote-author:after {
+        @include quote-bar;
+        border-bottom-color: #fff;
+    }
+}

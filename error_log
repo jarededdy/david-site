@@ -1,0 +1,1 @@
+[15-Nov-2018 18:14:13 UTC] PHP Warning:  mysqli_real_connect(): (28000/1045): Access denied for user 'root'@'localhost' (using password: YES) in /home/vsg360/public_html/david/wp-includes/wp-db.php on line 1531
