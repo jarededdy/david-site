@@ -12,11 +12,16 @@ html body p,
 html body a,
 html body span {
   font-family: "Oswald", sans-serif;
-  font-weight: 300;
+  font-weight: 500;
+  letter-spacing: 2px;
 }
 
 html body strong {
-  font-weight: 500 !important;
+  font-weight: 700 !important;
+}
+
+html body h2 {
+  font-size: 59px;
 }
 
 span.david-quote-author:after {
@@ -81,7 +86,7 @@ a.top-bar-link {
 }
 
 .dream-bigger-section {
-  background-position: 95% -26% !important;
+  background-position: 83% -32% !important;
 }
 
 .home-box-quote {
@@ -91,6 +96,7 @@ a.top-bar-link {
 .home-box-quote .david-quote-text {
   font-family: "Playfair Display", serif;
   color: #073f5d;
+  letter-spacing: 0px;
   margin-bottom: 15px;
 }
 
@@ -130,13 +136,14 @@ a.top-bar-link {
 }
 
 .parallax-quote-wrapper {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .parallax-quote-wrapper .david-quote-text {
   font-family: "Playfair Display", serif;
   margin-bottom: 15px;
   color: #fff;
+  letter-spacing: 0px;
 }
 
 .parallax-quote-wrapper .david-quote-author {
@@ -145,6 +152,7 @@ a.top-bar-link {
   font-weight: 500;
   letter-spacing: 2px;
   color: #fff;
+  font-size: .7em;
 }
 
 .parallax-quote-wrapper span.david-quote-author:after {
@@ -155,4 +163,24 @@ a.top-bar-link {
   padding-top: 5px;
   width: 35px;
   border-bottom-color: #fff;
+}
+
+.connect-btn a {
+  padding: 10px 45px !important;
+}
+
+.connect-btn a span {
+  font-family: "Playfair Display", serif !important;
+  text-transform: lowercase;
+  letter-spacing: 0px;
+}
+
+.planning-design-copy {
+  font-weight: 300;
+  letter-spacing: 0px;
+}
+
+.collections-copy-home {
+  font-weight: 300;
+  letter-spacing: 0px;
 }

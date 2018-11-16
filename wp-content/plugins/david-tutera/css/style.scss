@@ -26,10 +26,17 @@ html body {
     a,
     span {
         font-family: $dt-body;
-        font-weight: 300;
+        font-weight: 500;
+        letter-spacing: 2px;
     }
     strong {
-        font-weight: 500 !important;
+        font-weight: 700 !important;
+    }
+}
+
+html body {
+    h2 {
+        font-size: 59px;
     }
 }
 
@@ -121,7 +128,7 @@ a.top-bar-link {
 }
 
 .dream-bigger-section {
-    background-position: 95% -26% !important;
+    background-position: 83% -32% !important;
 }
 
 .home-box-quote {
@@ -129,6 +136,7 @@ a.top-bar-link {
     .david-quote-text {
         font-family: $dt-headers;
         color: $dt-dark-blue;
+        letter-spacing: 0px;
         margin-bottom: 15px;
     }
     .david-quote-author {
@@ -161,17 +169,38 @@ a.top-bar-link {
 }
 
 .parallax-quote-wrapper {
-    font-size: 1.5em;
+    font-size: 2em;
     .david-quote-text {
         @include david-quote-text;
         color: #fff;
+        letter-spacing: 0px;
     }
     .david-quote-author {
         @include david-quote-author;
         color: #fff;
+        font-size: .7em;
     }
     span.david-quote-author:after {
         @include quote-bar;
         border-bottom-color: #fff;
     }
+}
+
+.connect-btn a {
+    padding: 10px 45px !important;
+    span {
+        font-family: $dt-headers !important;
+        text-transform: lowercase;
+        letter-spacing: 0px;
+    }
+}
+
+.planning-design-copy {
+    font-weight: 300;
+    letter-spacing: 0px;
+}
+
+.collections-copy-home {
+    font-weight: 300;
+    letter-spacing: 0px;
 }
