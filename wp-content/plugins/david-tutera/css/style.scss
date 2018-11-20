@@ -26,8 +26,7 @@ html body {
     a,
     span {
         font-family: $dt-body;
-        font-weight: 500;
-        letter-spacing: 2px;
+        font-weight: 300;
     }
     strong {
         font-weight: 700 !important;
@@ -38,6 +37,11 @@ html body {
     h2 {
         font-size: 59px;
     }
+}
+
+.all-caps {
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 // General Website Element Styles
@@ -203,4 +207,34 @@ a.top-bar-link {
 .collections-copy-home {
     font-weight: 300;
     letter-spacing: 0px;
+}
+
+// Event Galleries Styles
+.alm-gallery-img {
+    margin-bottom: 35px;
+}
+
+.event-post-details {
+    .post-info__item--type-date {
+        color: $dt-gray;
+    }
+    .elementor-post-info__item-prefix {}
+    color: $dt-gray !important;
+    &:hover {
+        color: $dt-dark-blue !important;
+    }
+}
+
+// Load More Button Styles
+.alm-load-more-btn.more {
+    display: block;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    border-top: 1px solid $dt-gray;
+    border-bottom: 1px solid $dt-gray;
+    color: $dt-gray;
+    &:hover {
+        background-color: $dt-gray;
+        color: #fff;
+    }
 }

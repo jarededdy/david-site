@@ -224,7 +224,7 @@ class Email extends Action_Base {
 		if ( ! empty( $fields['email_reply_to'] ) ) {
 			$sent_data = $record->get( 'sent_data' );
 			foreach ( $record->get( 'fields' ) as $field_index => $field ) {
-				if ( $field_index === $fields['email_reply_to'] && ! empty( $sent_data[ $field_index ] ) ) {
+				if ( $field_index === $fields['email_reply_to'] && ! empty( $sent_data[ $field_index ] ) && is_email( $sent_data[ $field_index ] ) ) {
 					$email_reply_to = $sent_data[ $field_index ];
 					break;
 				}

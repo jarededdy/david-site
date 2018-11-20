@@ -180,8 +180,8 @@ class Single extends Theme_Page_Document {
 	 * @since  2.0.6
 	 * @access public
 	 */
-	public function save_type() {
-		parent::save_type();
+	public function save_template_type() {
+		parent::save_template_type();
 
 		$conditions_manager = Module::instance()->get_conditions_manager();
 

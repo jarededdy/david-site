@@ -12,8 +12,7 @@ html body p,
 html body a,
 html body span {
   font-family: "Oswald", sans-serif;
-  font-weight: 500;
-  letter-spacing: 2px;
+  font-weight: 300;
 }
 
 html body strong {
@@ -22,6 +21,11 @@ html body strong {
 
 html body h2 {
   font-size: 59px;
+}
+
+.all-caps {
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 span.david-quote-author:after {
@@ -183,4 +187,34 @@ a.top-bar-link {
 .collections-copy-home {
   font-weight: 300;
   letter-spacing: 0px;
+}
+
+.alm-gallery-img {
+  margin-bottom: 35px;
+}
+
+.event-post-details {
+  color: #7a7e83 !important;
+}
+
+.event-post-details .post-info__item--type-date {
+  color: #7a7e83;
+}
+
+.event-post-details:hover {
+  color: #073f5d !important;
+}
+
+.alm-load-more-btn.more {
+  display: block;
+  width: 100%;
+  background-color: transparent;
+  border-top: 1px solid #7a7e83;
+  border-bottom: 1px solid #7a7e83;
+  color: #7a7e83;
+}
+
+.alm-load-more-btn.more:hover {
+  background-color: #7a7e83;
+  color: #fff;
 }

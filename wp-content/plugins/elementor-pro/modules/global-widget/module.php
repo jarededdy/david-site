@@ -22,8 +22,6 @@ class Module extends Module_Base {
 	public function __construct() {
 		parent::__construct();
 
-		Plugin::elementor()->editor->add_editor_template( __DIR__ . '/views/panel-template.php' );
-
 		$this->add_hooks();
 	}
 
@@ -233,10 +231,15 @@ class Module extends Module_Base {
 		$documents_manager->register_document_type( self::TEMPLATE_TYPE, Documents\Widget::get_class_full_name() );
 	}
 
+	public function on_elementor_editor_init() {
+		Plugin::elementor()->common->add_template( __DIR__ . '/views/panel-template.php' );
+	}
+
 	private function add_hooks() {
 		add_action( 'elementor/documents/register', [ $this, 'register_documents' ] );
 		add_action( 'elementor/template-library/after_save_template', [ $this, 'set_template_widget_type_meta' ], 10, 2 );
 		add_action( 'elementor/template-library/after_update_template', [ $this, 'on_template_update' ], 10, 2 );
+		add_action( 'elementor/editor/init', [ $this, 'on_elementor_editor_init' ] );
 		add_action( 'elementor/editor/after_save', [ $this, 'set_global_widget_included_posts_list' ], 10, 2 );
 
 		add_filter( 'elementor_pro/editor/localize_settings', [ $this, 'add_templates_localize_data' ] );

@@ -1,5 +1,35 @@
 # Elementor Pro - by Elementor.com
 
+#### 2.2.0- 2018-11-19
+* New: Introducing Custom Attributes ([#290](https://github.com/pojome/elementor/issues/290), [#3990](https://github.com/pojome/elementor/issues/3990))
+* New: Added evergreen option for Countdown widget ([#4459](https://github.com/pojome/elementor/issues/4459))
+* New: Added expire actions option for Countdown widget (#5242)([#5242](https://github.com/pojome/elementor/issues/5242))
+* New: Introducing Reviews widget ([#3854](https://github.com/pojome/elementor/issues/3854))
+* New: Introducing Sitemap widget ([#5594](https://github.com/pojome/elementor/issues/5594))
+* New: Added Request parameter dynamic tag ([#4934](https://github.com/pojome/elementor/issues/4934))
+* New: Added Shortcode dynamic tag
+* New: Added Image and Video Lightbox dynamic tag
+* New: Added Contact URL dynamic tag
+* New: Added Featured Image Data dynamic tag
+* New: Added default value to each field in the Form widget ([#4268](https://github.com/pojome/elementor/issues/4268))
+* New: Added "Any Child Of" condition to template conditions ([#5321](https://github.com/pojome/elementor/issues/5321))
+* New: Added "In Child" condition to template conditions ([#5587](https://github.com/pojome/elementor/issues/5587))
+* Tweak: Added Form Redirect URL with form values ([#2564](https://github.com/pojome/elementor/issues/2564))
+* Tweak: Added default post classes to template wrapper ([#5959](https://github.com/pojome/elementor/issues/5959))
+* Tweak: Better labels for terms in Query control ([#6092](https://github.com/pojome/elementor/issues/6092))
+* Tweak: Renamed "Child Of" templates condition to "Direct Child Of"
+* Tweak: Added `elementor/theme/get_location_templates/condition_sub_id` filter hook to allow template condition translations
+* Tweak: Load the Template Library widget via Ajax for better performance
+* Tweak: Added 404 page title to page title dynamic tag
+* Fix: Menu Cart Toggle has # URL link ([#6141](https://github.com/pojome/elementor/issues/6141))
+* Fix: Alignment issue in Nav Menu widget ([#5790](https://github.com/pojome/elementor/issues/5790))
+* Fix: Avoid potential security risk in forms
+* Fix: Template By Author condition conflicts with 404 page
+* Fix: Restored WC Product Content widget in Single Product template
+* Fix: Theme Builder Preview URLs for date archives and 404 pages
+* Fix: Highlight active menu anchor items only when scrolled into view
+* Fix: Carousel Pagination Progress style to support new Swiper version
+
 #### 2.1.13- 2018-11-12
 * Tweak: Added compatibility for new brand Finder in v2.3.0
 * Fix: Settings conflict when there are multiple carousels in the page
