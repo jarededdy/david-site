@@ -39,6 +39,10 @@ html body {
     }
 }
 
+html body .playfair p {
+    font-family: $dt-headers !important;
+}
+
 .all-caps {
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -64,6 +68,11 @@ html body {
     text-transform: uppercase;
     font-weight: 500;
     letter-spacing: 2px;
+}
+
+@mixin david-btn {
+    padding: 10px 45px !important;
+    font-family: $dt-headers !important;
 }
 
 span.david-quote-author:after {
@@ -196,6 +205,13 @@ a.top-bar-link {
         font-family: $dt-headers !important;
         text-transform: lowercase;
         letter-spacing: 0px;
+    }
+}
+
+.david-btn a {
+    @include david-btn;
+    span {
+        font-family: $dt-headers !important;
     }
 }
 

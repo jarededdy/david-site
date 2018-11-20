@@ -23,6 +23,10 @@ html body h2 {
   font-size: 59px;
 }
 
+html body .playfair p {
+  font-family: "Playfair Display", serif !important;
+}
+
 .all-caps {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -177,6 +181,15 @@ a.top-bar-link {
   font-family: "Playfair Display", serif !important;
   text-transform: lowercase;
   letter-spacing: 0px;
+}
+
+.david-btn a {
+  padding: 10px 45px !important;
+  font-family: "Playfair Display", serif !important;
+}
+
+.david-btn a span {
+  font-family: "Playfair Display", serif !important;
 }
 
 .planning-design-copy {
