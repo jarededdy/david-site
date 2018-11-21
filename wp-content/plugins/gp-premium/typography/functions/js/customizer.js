@@ -112,9 +112,9 @@ gp_premium_typography_live_update( 'secondary_navigation_font_transform', '.seco
 /**
  * Buttons
  */
-gp_premium_typography_live_update( 'buttons_font_size', 'button:not(.menu-toggle),html input[type="button"],input[type="reset"],input[type="submit"],.button,.button:visited,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button', 'font-size', 'px' );
-gp_premium_typography_live_update( 'buttons_font_weight', 'button:not(.menu-toggle),html input[type="button"],input[type="reset"],input[type="submit"],.button,.button:visited,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button', 'font-weight' );
-gp_premium_typography_live_update( 'buttons_font_transform', 'button:not(.menu-toggle),html input[type="button"],input[type="reset"],input[type="submit"],.button,.button:visited,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button', 'text-transform' );
+gp_premium_typography_live_update( 'buttons_font_size', 'button:not(.menu-toggle),html input[type="button"],input[type="reset"],input[type="submit"],.button,.button:visited,.wp-block-button .wp-block-button__link,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button', 'font-size', 'px' );
+gp_premium_typography_live_update( 'buttons_font_weight', 'button:not(.menu-toggle),html input[type="button"],input[type="reset"],input[type="submit"],.button,.button:visited,.wp-block-button .wp-block-button__link,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button', 'font-weight' );
+gp_premium_typography_live_update( 'buttons_font_transform', 'button:not(.menu-toggle),html input[type="button"],input[type="reset"],input[type="submit"],.button,.button:visited,.wp-block-button .wp-block-button__link,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button', 'text-transform' );
 
 /**
  * H1 font size, weight and transform

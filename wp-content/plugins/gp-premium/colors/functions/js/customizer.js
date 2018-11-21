@@ -141,8 +141,8 @@ generate_colors_live_update( 'navigation_text_hover_color',
 	'.navigation-search input[type="search"],\
 	.navigation-search input[type="search"]:active,\
 	.navigation-search input[type="search"]:focus,\
-	.main-navigation .main-nav ul li > a:hover,\
-	.main-navigation .main-nav ul li > a:focus,\
+	.main-navigation .main-nav ul li:hover > a,\
+	.main-navigation .main-nav ul li:focus > a,\
 	.main-navigation .main-nav ul li.sfHover > a',
 		'color', '', 'link_color_hover'
 );
@@ -154,8 +154,8 @@ generate_colors_live_update( 'navigation_text_hover_color',
 generate_colors_live_update( 'navigation_background_hover_color',
 	'.navigation-search input[type="search"],\
 	.navigation-search input[type="search"]:focus,\
-	.main-navigation .main-nav ul li > a:hover,\
-	.main-navigation .main-nav ul li > a:focus,\
+	.main-navigation .main-nav ul li:hover > a,\
+	.main-navigation .main-nav ul li:focus > a,\
 	.main-navigation .main-nav ul li.sfHover > a',
 		'background-color', 'transparent'
 );
@@ -175,8 +175,8 @@ generate_colors_live_update( 'subnavigation_text_color', '.main-navigation .main
 /**
  * Primary sub-navigation hover
  */
-var subnavigation_hover = '.main-navigation .main-nav ul ul li > a:hover, \
-	.main-navigation .main-nav ul ul li > a:focus, \
+var subnavigation_hover = '.main-navigation .main-nav ul ul li:hover > a, \
+	.main-navigation .main-nav ul ul li:focus > a, \
 	.main-navigation .main-nav ul ul li.sfHover > a';
 
 /**
@@ -195,7 +195,7 @@ generate_colors_live_update( 'subnavigation_background_hover_color', subnavigati
  * Navigation current selectors
  */
 var navigation_current = '.main-navigation .main-nav ul li[class*="current-menu-"] > a, \
-	.main-navigation .main-nav ul li[class*="current-menu-"] > a:hover, \
+	.main-navigation .main-nav ul li[class*="current-menu-"]:hover > a, \
 	.main-navigation .main-nav ul li[class*="current-menu-"].sfHover > a';
 
 /**
@@ -214,7 +214,7 @@ generate_colors_live_update( 'navigation_background_current_color', navigation_c
  * Primary sub-navigation current selectors
  */
 var subnavigation_current = '.main-navigation .main-nav ul ul li[class*="current-menu-"] > a,\
-	.main-navigation .main-nav ul ul li[class*="current-menu-"] > a:hover, \
+	.main-navigation .main-nav ul ul li[class*="current-menu-"]:hover > a, \
 	.main-navigation .main-nav ul ul li[class*="current-menu-"].sfHover > a';
 
 /**
@@ -254,8 +254,8 @@ generate_colors_live_update( 'navigation_text_color',
  * Empty:  link_color_hover
  */
 generate_colors_live_update( 'navigation_text_hover_color',
-	'.secondary-navigation .main-nav ul li > a:hover, \
-	.secondary-navigation .main-nav ul li > a:focus, \
+	'.secondary-navigation .main-nav ul li:hover > a, \
+	.secondary-navigation .main-nav ul li:focus > a, \
 	.secondary-navigation .main-nav ul li.sfHover > a',
 		'color', '', 'link_color_hover', 'generate_secondary_nav_settings'
 );
@@ -265,8 +265,8 @@ generate_colors_live_update( 'navigation_text_hover_color',
  * Empty:  link_color_hover
  */
 generate_colors_live_update( 'navigation_background_hover_color',
-	'.secondary-navigation .main-nav ul li > a:hover, \
-	.secondary-navigation .main-nav ul li > a:focus, \
+	'.secondary-navigation .main-nav ul li:hover > a, \
+	.secondary-navigation .main-nav ul li:focus > a, \
 	.secondary-navigation .main-nav ul li.sfHover > a',
 		'background-color', 'transparent', '', 'generate_secondary_nav_settings'
 );
@@ -309,7 +309,7 @@ generate_colors_live_update( 'subnavigation_text_color', '.secondary-navigation 
  * Secondary sub-navigation hover
  */
 var secondary_subnavigation_hover = '.secondary-navigation .main-nav ul ul li > a:hover, \
-	.secondary-navigation .main-nav ul ul li > a:focus, \
+	.secondary-navigation .main-nav ul ul li:focus > a, \
 	.secondary-navigation .main-nav ul ul li.sfHover > a';
 
 /**
@@ -328,7 +328,7 @@ generate_colors_live_update( 'subnavigation_background_hover_color', secondary_s
  * Secondary navigation current selectors
  */
 var secondary_navigation_current = '.secondary-navigation .main-nav ul li[class*="current-menu-"] > a, \
-	.secondary-navigation .main-nav ul li[class*="current-menu-"] > a:hover, \
+	.secondary-navigation .main-nav ul li[class*="current-menu-"]:hover > a, \
 	.secondary-navigation .main-nav ul li[class*="current-menu-"].sfHover > a';
 
 /**
@@ -347,7 +347,7 @@ generate_colors_live_update( 'navigation_background_current_color', secondary_na
  * Secondary sub-navigation current selectors
  */
 var secondary_subnavigation_current = '.secondary-navigation .main-nav ul ul li[class*="current-menu-"] > a,\
-	.secondary-navigation .main-nav ul ul li[class*="current-menu-"] > a:hover, \
+	.secondary-navigation .main-nav ul ul li[class*="current-menu-"]:hover > a, \
 	.secondary-navigation .main-nav ul ul li[class*="current-menu-"].sfHover > a';
 
 /**
@@ -389,8 +389,8 @@ generate_colors_live_update( 'content_text_color', content, 'color', '', 'text_c
  * Empty: link_color
  */
 generate_colors_live_update( 'content_link_color',
-	'.inside-article a:not(.button)[data-content-link-color=true], \
-	.inside-article a:not(.button)[data-content-link-color=true]:visited,\
+	'.inside-article a:not(.button):not(.wp-block-button__link)[data-content-link-color=true], \
+	.inside-article a:not(.button):not(.wp-block-button__link)[data-content-link-color=true]:visited,\
 	.paging-navigation a,\
 	.paging-navigation a:visited,\
 	.comments-area a,\
@@ -405,7 +405,7 @@ generate_colors_live_update( 'content_link_color',
  * Empty: link_color_hover
  */
 generate_colors_live_update( 'content_link_hover_color',
-	'.inside-article a:not(.button)[data-content-link-color=true]:hover,\
+	'.inside-article a:not(.button):not(.wp-block-button__link)[data-content-link-color=true]:hover,\
 	.paging-navigation a:hover,\
 	.comments-area a:hover,\
 	.page-header a:hover',
@@ -510,7 +510,7 @@ var button = 'button, \
 	input[type="submit"],\
 	a.button,\
 	a.button:visited,\
-	.wp-block-button__link:not(.has-background)';
+	a.wp-block-button__link:not(.has-background)';
 
 /**
  * Button background
@@ -538,9 +538,9 @@ var button_hover = 'button:hover, \
 	input[type="reset"]:focus, \
 	input[type="submit"]:focus,\
 	a.button:focus,\
-	.wp-block-button__link:not(.has-background):active,\
-	.wp-block-button__link:not(.has-background):focus,\
-	.wp-block-button__link:not(.has-background):hover';
+	a.wp-block-button__link:not(.has-background):active,\
+	a.wp-block-button__link:not(.has-background):focus,\
+	a.wp-block-button__link:not(.has-background):hover';
 
 /**
  * Button color on hover

@@ -600,6 +600,17 @@ if ( ! function_exists( 'generate_menu_plus_inline_css' ) ) {
 			$return .= '.main-navigation .main-nav ul li a,.menu-toggle,.main-navigation .mobile-bar-items a{transition: line-height 300ms ease}';
 		}
 
+		if ( function_exists( 'generate_get_color_defaults' ) ) {
+			$color_defaults = wp_parse_args(
+				get_option( 'generate_settings', array() ),
+				generate_get_color_defaults()
+			);
+
+			if ( 'true' === $generate_menu_plus_settings['sticky_menu'] || 'mobile' === $generate_menu_plus_settings['sticky_menu'] || 'enable' === $generate_menu_plus_settings['mobile_header_sticky'] ) {
+				$return .= '.main-navigation.toggled .main-nav > ul{background-color: ' . $color_defaults['navigation_background_color'] . '}';
+			}
+		}
+
 		return $return;
 	}
 }
@@ -623,8 +634,14 @@ if ( ! function_exists( 'generate_menu_plus_mobile_header' ) ) {
 		} else {
 			$hide_sticky = '';
 		}
+
+		$microdata = 'itemtype="https://schema.org/SiteNavigationElement" itemscope';
+
+		if ( function_exists( 'generate_get_microdata' ) ) {
+			$microdata = generate_get_microdata( 'navigation' );
+		}
 		?>
-		<nav itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" id="mobile-header"<?php echo $hide_sticky;?> class="main-navigation mobile-header-navigation">
+		<nav id="mobile-header"<?php echo $hide_sticky;?> class="main-navigation mobile-header-navigation" <?php echo $microdata; ?>>
 			<div class="inside-navigation grid-container grid-parent">
 				<?php do_action( 'generate_inside_mobile_header' ); ?>
 				<button class="menu-toggle" aria-controls="mobile-menu" aria-expanded="false">
@@ -666,8 +683,14 @@ if ( ! function_exists( 'generate_slideout_navigation' ) ) {
 		if ( 'false' == $settings['slideout_menu'] ) {
 			return;
 		}
+
+		$microdata = 'itemtype="https://schema.org/SiteNavigationElement" itemscope';
+
+		if ( function_exists( 'generate_get_microdata' ) ) {
+			$microdata = generate_get_microdata( 'navigation' );
+		}
 		?>
-		<nav itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" id="generate-slideout-menu" class="main-navigation slideout-navigation" style="display: none;">
+		<nav id="generate-slideout-menu" class="main-navigation slideout-navigation" <?php echo $microdata; ?> style="display: none;">
 			<div class="inside-navigation grid-container grid-parent">
 				<?php
 				do_action( 'generate_inside_slideout_navigation' );
@@ -915,7 +938,7 @@ if ( ! function_exists( 'generate_menu_plus_sticky_logo' ) ) {
 		echo apply_filters( 'generate_navigation_logo_output', sprintf(
 			'<div class="site-logo sticky-logo navigation-logo">
 				<a href="%1$s" title="%2$s" rel="home">
-					<img class="header-image" src="%3$s" alt="%4$s" />
+					<img src="%3$s" alt="%4$s" />
 				</a>
 			</div>',
 			esc_url( apply_filters( 'generate_logo_href' , home_url( '/' ) ) ),
@@ -946,7 +969,7 @@ if ( ! function_exists( 'generate_menu_plus_mobile_header_logo' ) ) {
 		echo apply_filters( 'generate_mobile_header_logo_output', sprintf(
 			'<div class="site-logo mobile-header-logo">
 				<a href="%1$s" title="%2$s" rel="home">
-					<img class="header-image" src="%3$s" alt="%4$s" />
+					<img src="%3$s" alt="%4$s" />
 				</a>
 			</div>',
 			esc_url( apply_filters( 'generate_logo_href' , home_url( '/' ) ) ),

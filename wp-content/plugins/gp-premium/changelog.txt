@@ -1,5 +1,21 @@
 == changelog ==
 
+= 1.7.5 =
+* Colors: Improve block editor button color preview
+* Menu Plus: Mobile menu items hidden behind content with higher z-index when sticky
+* Menu Plus: Prevent mobile menu from covering mobile toggle when sticky
+* Menu Plus: Don't close mobile menu if # is the whole URL
+
+= 1.7.4 =
+* Colors: Fix navigation live color preview issues
+* Colors: Move navigation parent item title down in Customizer
+* Elements: Allow slashes in hook names
+* General: Fix smooth scroll anchor location on mobile (requires GP 2.2)
+* Menu Plus: Use https for navigation microdata
+* Menu Plus: Remove header-image class from navigation and mobile header logos
+* Menu Plus: Add navigation search height support to mobile header and sticky nav
+* Typography: Include block editor button in live preview
+
 = 1.7.3 =
 * Blog: Allow masonry to be turned off using a boolean filter
 * Blog: Fix load more button appearing when not needed

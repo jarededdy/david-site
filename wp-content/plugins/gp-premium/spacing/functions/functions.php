@@ -148,17 +148,17 @@ if ( ! function_exists( 'generate_spacing_premium_defaults' ) ) {
 }
 
 if ( ! function_exists( 'generate_spacing_premium_css' ) ) {
-	add_filter( 'generate_spacing_css_output', 'generate_spacing_premium_css' );
+	add_action( 'wp_enqueue_scripts', 'generate_spacing_premium_css', 100 );
 	/**
 	 * Add premium spacing CSS
 	 *
 	 * @since 1.3
 	 */
-	function generate_spacing_premium_css( $css ) {
+	function generate_spacing_premium_css() {
 
 		// Bail if we don't have our defaults
 		if ( ! function_exists( 'generate_spacing_get_defaults' ) ) {
-			return $css;
+			return;
 		}
 
 		$spacing_settings = wp_parse_args(
@@ -197,7 +197,8 @@ if ( ! function_exists( 'generate_spacing_premium_css' ) ) {
 			if ( '' !== $spacing_settings[ 'mobile_menu_item_height' ] ) {
 				$premium_css->set_selector( '.main-navigation .main-nav ul li a,.menu-toggle,.main-navigation .mobile-bar-items a' );
 				$premium_css->add_property( 'line-height', absint( $spacing_settings['mobile_menu_item_height'] ), false, 'px' );
-				$premium_css->set_selector( '.main-navigation .site-logo.navigation-logo img, .mobile-header-navigation .site-logo.mobile-header-logo img' );
+
+				$premium_css->set_selector( '.main-navigation .site-logo.navigation-logo img, .mobile-header-navigation .site-logo.mobile-header-logo img, .navigation-search input' );
 				$premium_css->add_property( 'height', absint( $spacing_settings['mobile_menu_item_height'] ), false, 'px' );
 			}
 
@@ -215,7 +216,7 @@ if ( ! function_exists( 'generate_spacing_premium_css' ) ) {
 					$premium_css->set_selector( '.main-navigation.sticky-navigation-transition .main-nav > ul > li > a,.sticky-navigation-transition .menu-toggle,.main-navigation.sticky-navigation-transition .mobile-bar-items a' );
 					$premium_css->add_property( 'line-height', absint( $spacing_settings[ 'sticky_menu_item_height' ] ), false, 'px' );
 
-					$premium_css->set_selector( '.main-navigation.sticky-navigation-transition .navigation-logo img' );
+					$premium_css->set_selector( '.main-navigation.sticky-navigation-transition .navigation-logo img, .main-navigation.sticky-navigation-transition .navigation-search input' );
 					$premium_css->add_property( 'height', absint( $spacing_settings[ 'sticky_menu_item_height' ] ), false, 'px' );
 
 				$premium_css->stop_media_query();
@@ -229,6 +230,8 @@ if ( ! function_exists( 'generate_spacing_premium_css' ) ) {
 			}
 		}
 
-		return $css . $premium_css->css_output();
+		if ( '' !== $premium_css->css_output() ) {
+			wp_add_inline_style( 'generate-style', $premium_css->css_output() );
+		}
 	}
 }

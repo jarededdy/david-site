@@ -616,4 +616,31 @@ jQuery( document ).ready( function($) {
 		  	} );
 		}
 	}
+
+	var closeMobileMenu = function( item ) {
+		var _this = item,
+			url = _this.getAttribute( 'href' );
+
+		if ( _this.pathname === window.location.pathname && '#' !== url ) {
+			if ( _this.closest( 'nav' ).classList.contains( 'toggled' ) ) {
+				_this.closest( 'nav' ).classList.remove( 'toggled' );
+
+				if ( $( 'html' ).hasClass( 'mobile-menu-open' ) ) {
+					$( 'html' ).removeClass( 'mobile-menu-open' );
+				}
+			}
+		}
+	};
+
+	if ( body.hasClass( 'both-sticky-menu' ) || body.hasClass( 'mobile-sticky-menu' ) ) {
+		$( '.main-navigation:not(#mobile-header) ul a[href*=\\#]' ).on( 'click', function( event ) {
+			closeMobileMenu( this );
+		} );
+	}
+
+	if ( body.hasClass( 'mobile-header-sticky' ) ) {
+		$( '#mobile-header ul a[href*=\\#]' ).on( 'click', function( event ) {
+			closeMobileMenu( this );
+		} );
+	}
 });

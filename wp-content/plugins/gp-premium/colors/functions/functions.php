@@ -252,7 +252,7 @@ if ( ! function_exists( 'generate_colors_customize_register' ) ) {
 					'type'        => 'generatepress-customizer-title',
 					'title'			=> __( 'Parent Items', 'gp-premium' ),
 					'settings' => ( isset( $wp_customize->selective_refresh ) ) ? array() : 'blogname',
-					'priority'	=> 0,
+					'priority'	=> 1,
 				)
 			)
 		);

@@ -1468,7 +1468,7 @@ class GeneratePress_Elements_Metabox {
 		// Save Hooks type.
 		if ( 'hook' === $type_value ) {
 			$hook_values = array(
-				'_generate_hook' 						=> 'key',
+				'_generate_hook' 						=> 'text',
 				'_generate_custom_hook' 				=> 'text',
 				'_generate_hook_disable_site_header'	=> 'key',
 				'_generate_hook_disable_site_footer' 	=> 'key',

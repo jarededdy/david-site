@@ -709,14 +709,29 @@ if (window.Element && !Element.prototype.closest) {
 var scroll = new SmoothScroll( smooth.elements.join(), {
 	speed: smooth.duration,
 	offset: function( anchor, toggle ) {
-		var nav = document.querySelector( '.main-navigation:not(.slideout-navigation)' ),
-			openMobileMenu = document.querySelector( '.main-navigation.toggled' ),
+		var body = document.body,
+			nav = document.querySelector( '#site-navigation' ),
+			stickyNav = document.querySelector( '#sticky-navigation' ),
+			mobileHeader = document.querySelector( '#mobile-header' ),
+			menuToggle = document.querySelector( '.menu-toggle' ),
 			offset = 0;
 
-		if ( document.body.classList.contains( 'sticky-enabled' ) ) {
-			if ( nav.classList.contains( 'navigation-stick' ) && openMobileMenu && openMobileMenu.contains( toggle ) ) {
-				offset = offset + nav.querySelector( '.menu-toggle' ).clientHeight;
-			} else {
+		if ( mobileHeader && ( mobileHeader.offsetWidth || mobileHeader.offsetHeight || mobileHeader.getClientRects().length ) ) {
+			if ( body.classList.contains( 'mobile-header-sticky' ) ) {
+				offset = offset + mobileHeader.clientHeight;
+			}
+		} else if ( menuToggle && ( menuToggle.offsetWidth || menuToggle.offsetHeight || menuToggle.getClientRects().length ) ) {
+			if ( body.classList.contains( 'both-sticky-menu' ) || body.classList.contains( 'mobile-sticky-menu' ) ) {
+				if ( stickyNav ) {
+					offset = offset + stickyNav.clientHeight;
+				} else if ( nav ) {
+					offset = offset + nav.clientHeight;
+				}
+			}
+		} else if ( body.classList.contains( 'both-sticky-menu' ) || body.classList.contains( 'desktop-sticky-menu' ) ) {
+			if ( stickyNav ) {
+				offset = offset + stickyNav.clientHeight;
+			} else if ( nav ) {
 				offset = offset + nav.clientHeight;
 			}
 		}
