@@ -71,7 +71,7 @@ html body .playfair p {
 }
 
 @mixin david-btn {
-    padding: 10px 45px !important;
+    padding: 15px 45px !important;
     font-family: $dt-headers !important;
 }
 
@@ -84,25 +84,34 @@ span.david-quote-author:after {
 }
 
 // Top Bar Styles
-a.top-bar-link {
+a.top-bar-link,
+a.top-bar-link:visited {
     font-size: 15px;
     color: $dt-gray;
+    font-weight: 400;
+    letter-spacing: 2px;
+}
+
+a.top-bar-link:hover {
+    color: $dt-dark-blue;
 }
 
 // Footer Styles
 .footer-vsg-link {
+    width: 100%;
+    justify-content: center;
     display: flex;
     align-items: center;
     color: #fff;
     p.footer-vsg-link-text {
         float: left;
         margin-bottom: 0px;
-        margin-right: 25px;
+        margin-right: 15px;
     }
     a.footer-vsg-link-logo {
         float: left;
         img {
-            max-width: 200px;
+            max-width: 150px;
             vertical-align: middle;
         }
     }
@@ -141,7 +150,14 @@ a.top-bar-link {
 }
 
 .dream-bigger-section {
-    background-position: 83% -32% !important;
+    background-position: 83% -19.3% !important;
+}
+
+.home-slider {
+    .david-quote-author {
+        @include david-quote-author;
+        font-size: .7em;
+    }
 }
 
 .home-box-quote {
@@ -156,9 +172,9 @@ a.top-bar-link {
         font-family: $dt-body;
         color: $dt-gold;
         text-transform: uppercase;
-        font-size: .7em;
-        font-weight: 500;
-        letter-spacing: 2px;
+        font-size: .7em !important;
+        font-weight: 500 !important;
+        letter-spacing: 2px !important;
     }
     span.david-quote-author:after {
         @include quote-bar;
@@ -200,7 +216,7 @@ a.top-bar-link {
 }
 
 .connect-btn a {
-    padding: 10px 45px !important;
+    padding: 15px 55px !important;
     span {
         font-family: $dt-headers !important;
         text-transform: lowercase;
@@ -212,6 +228,7 @@ a.top-bar-link {
     @include david-btn;
     span {
         font-family: $dt-headers !important;
+        text-transform: lowercase !important;
     }
 }
 
@@ -253,4 +270,14 @@ a.top-bar-link {
         background-color: $dt-gray;
         color: #fff;
     }
+}
+
+.elementor-nav-menu li a.elementor-item:after {
+    width: 10px;
+    position: absolute;
+    left: 45%;
+}
+
+.elementor-nav-menu li a {
+    font-weight: 400 !important;
 }
