@@ -37,7 +37,6 @@ class API {
 		);
 
 		$response = wp_remote_post( self::STORE_URL, [
-			'sslverify' => false,
 			'timeout' => 40,
 			'body' => $body_args,
 		] );
@@ -156,7 +155,6 @@ class API {
 		];
 
 		$response = wp_remote_post( $url, [
-			'sslverify' => false,
 			'timeout' => 40,
 			'body' => $body_args,
 		] );

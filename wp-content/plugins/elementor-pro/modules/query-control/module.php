@@ -193,47 +193,55 @@ class Module extends Module_Base {
 
 		$results = [];
 
-		if ( 'taxonomy' === $request['filter_type'] ) {
+		switch ( $request['filter_type'] ) {
+			case 'taxonomy':
+				$terms = get_terms(
+					[
+						'include' => $ids,
+						'hide_empty' => false,
+					]
+				);
 
-			$terms = get_terms(
-				[
+				foreach ( $terms as $term ) {
+					$results[ $term->term_id ] = $term->name;
+				}
+				break;
+
+			case 'by_id':
+			case 'post':
+				$query = new \WP_Query(
+					[
+						'post_type' => 'any',
+						'post__in' => $ids,
+						'posts_per_page' => -1,
+					]
+				);
+
+				foreach ( $query->posts as $post ) {
+					$results[ $post->ID ] = $post->post_title;
+				}
+				break;
+
+			case 'author':
+				$query_params = [
+					'who' => 'authors',
+					'has_published_posts' => true,
+					'fields' => [
+						'ID',
+						'display_name',
+					],
 					'include' => $ids,
-					'hide_empty' => false,
-				]
-			);
+				];
 
-			foreach ( $terms as $term ) {
-				$results[ $term->term_id ] = $term->name;
-			}
-		} elseif ( 'by_id' === $request['filter_type'] || 'post' === $request['filter_type'] ) {
-			$query = new \WP_Query(
-				[
-					'post_type' => 'any',
-					'post__in' => $ids,
-					'posts_per_page' => -1,
-				]
-			);
+				$user_query = new \WP_User_Query( $query_params );
 
-			foreach ( $query->posts as $post ) {
-				$results[ $post->ID ] = $post->post_title;
-			}
-		} elseif ( 'author' === $request['filter_type'] ) {
-			$query_params = [
-				'who' => 'authors',
-				'has_published_posts' => true,
-				'fields' => [
-					'ID',
-					'display_name',
-				],
-				'include' => $ids,
-			];
-
-			$user_query = new \WP_User_Query( $query_params );
-
-			foreach ( $user_query->get_results() as $author ) {
-				$results[ $author->ID ] = $author->display_name;
-			}
-		} // End if().
+				foreach ( $user_query->get_results() as $author ) {
+					$results[ $author->ID ] = $author->display_name;
+				}
+				break;
+			default:
+				$results = apply_filters( 'elementor_pro/query_control/get_value_titles/' . $request['filter_type'], [], $request );
+		}
 
 		return $results;
 	}

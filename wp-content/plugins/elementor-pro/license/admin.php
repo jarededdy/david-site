@@ -263,8 +263,26 @@ class Admin {
 		<?php
 	}
 
+	private function is_block_editor_page() {
+		$current_screen = get_current_screen();
+
+		if ( method_exists( $current_screen, 'is_block_editor' ) && $current_screen->is_block_editor() ) {
+			return true;
+		}
+
+		if ( function_exists( 'is_gutenberg_page' ) && is_gutenberg_page() ) {
+			return true;
+		}
+
+		return false;
+	}
+
 	public function admin_license_details() {
 		if ( ! current_user_can( 'manage_options' ) ) {
+			return;
+		}
+
+		if ( $this->is_block_editor_page() ) {
 			return;
 		}
 

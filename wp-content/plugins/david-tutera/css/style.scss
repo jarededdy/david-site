@@ -1,283 +1,342 @@
-// Sass Written by: Jared Eddy - https://jarededdy.io
-// Importing David Tutera Brand Fonts
-@import url('https://fonts.googleapis.com/css?family=Oswald:300,500|Playfair+Display');
-// Declaring David Tutera Brand Styles
-$dt-gray: #7a7e83;
-$dt-dark-blue: #073f5d;
-$dt-medium-blue: #6eb0c7;
-$dt-light-blue: #c3dbe7;
-$dt-gold: #f1c36d;
-$dt-light-gray:#f0ede8;
-$dt-headers: 'Playfair Display',
-serif;
-$dt-body:'Oswald',
-sans-serif;
-// Setting David Tutera Brand Fonts
-html body {
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-        font-family: $dt-headers;
-    }
-    p,
-    a,
-    span {
-        font-family: $dt-body;
-        font-weight: 300;
-    }
-    strong {
-        font-weight: 700 !important;
-    }
-}
-
-html body {
-    h2 {
-        font-size: 59px;
-    }
-}
-
-html body .playfair p {
-    font-family: $dt-headers !important;
-}
-
-.all-caps {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-// General Website Element Styles
-@mixin quote-bar {
-    content: ""; // This is required to make the ::after psuedo element work
-    display: block; // This makes sure it shows up
-    margin: 0 auto; // centers the element
-    border-bottom: 3px solid #fff;
-    padding-top: 5px;
-    width: 35px;
-}
-
-@mixin david-quote-text {
-    font-family: $dt-headers;
-    margin-bottom: 15px;
-}
-
-@mixin david-quote-author {
-    font-family: $dt-body;
-    text-transform: uppercase;
-    font-weight: 500;
-    letter-spacing: 2px;
-}
-
-@mixin david-btn {
-    padding: 15px 45px !important;
-    font-family: $dt-headers !important;
-}
-
-span.david-quote-author:after {
-    @include quote-bar;
-}
-
-.elementor-sticky--active {
-    background-color: rgba(0, 0, 0, .5);
-}
-
-// Top Bar Styles
-a.top-bar-link,
-a.top-bar-link:visited {
-    font-size: 15px;
-    color: $dt-gray;
-    font-weight: 400;
-    letter-spacing: 2px;
-}
-
-a.top-bar-link:hover {
-    color: $dt-dark-blue;
-}
-
-// Footer Styles
-.footer-vsg-link {
-    width: 100%;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    color: #fff;
-    p.footer-vsg-link-text {
-        float: left;
-        margin-bottom: 0px;
-        margin-right: 15px;
-    }
-    a.footer-vsg-link-logo {
-        float: left;
-        img {
-            max-width: 150px;
-            vertical-align: middle;
+    // Sass Written by: Jared Eddy - https://jarededdy.io
+    // Importing David Tutera Brand Fonts
+    @import url('https://fonts.googleapis.com/css?family=Oswald:300,500|Playfair+Display');
+    // Declaring David Tutera Brand Styles
+    $dt-gray: #7a7e83;
+    $dt-dark-blue: #073f5d;
+    $dt-medium-blue: #6eb0c7;
+    $dt-light-blue: #c3dbe7;
+    $dt-gold: #f1c36d;
+    $dt-light-gray:#f0ede8;
+    $dt-headers: 'Playfair Display',
+    serif;
+    $dt-body:'Oswald',
+    sans-serif;
+    // Setting David Tutera Brand Fonts
+    html body {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: $dt-headers;
+        }
+        p,
+        a,
+        span {
+            font-family: $dt-body;
+            font-weight: 300;
+        }
+        strong {
+            font-weight: 700 !important;
         }
     }
-}
-
-// Home Slider Styles
-// First Slide Styles Begin
-#slick-slide00 {
-    .slick-slide-bg {
-        background-position: 50% 35%;
+    
+    html body {
+        h2 {
+            font-size: 59px;
+        }
     }
-    .slick-slide-inner .elementor-slide-content {
-        margin-right: 60%;
-        margin-left: 10%;
+    
+    html body .playfair p {
+        font-family: $dt-headers !important;
     }
-}
-
-// First Slide Styles End
-// Second Slide Styles
-#slick-slide01 {
-    .slick-slide-bg {
-        background-position: top;
+    
+    .all-caps {
+        text-transform: uppercase;
+        letter-spacing: 2px;
     }
-    .slick-slide-inner .elementor-slide-content {
-        margin-right: 25%;
-        margin-left: 45%
+    
+    // General Website Element Styles
+    @mixin quote-bar {
+        content: ""; // This is required to make the ::after psuedo element work
+        display: block; // This makes sure it shows up
+        margin: 0 auto; // centers the element
+        border-bottom: 3px solid #fff;
+        padding-top: 5px;
+        width: 35px;
     }
-}
-
-// Second Slide Styles End
-// Third Slide Styles Begin
-#slick-slide02 {
-    .slick-slide-inner .elementor-slide-content .elementor-slide-description {
-        font-size: 1.5em;
-    }
-}
-
-.dream-bigger-section {
-    background-position: 83% -19.3% !important;
-}
-
-.home-slider {
-    .david-quote-author {
-        @include david-quote-author;
-        font-size: .7em;
-    }
-}
-
-.home-box-quote {
-    font-size: 2em;
-    .david-quote-text {
+    
+    @mixin david-quote-text {
         font-family: $dt-headers;
-        color: $dt-dark-blue;
-        letter-spacing: 0px;
         margin-bottom: 15px;
     }
-    .david-quote-author {
+    
+    @mixin david-quote-author {
         font-family: $dt-body;
-        color: $dt-gold;
         text-transform: uppercase;
-        font-size: .7em !important;
-        font-weight: 500 !important;
-        letter-spacing: 2px !important;
+        font-weight: 500;
+        letter-spacing: 2px;
     }
+    
+    @mixin david-btn {
+        padding: 15px 45px !important;
+        font-family: $dt-headers !important;
+    }
+    
     span.david-quote-author:after {
         @include quote-bar;
-        border-bottom-color: $dt-gold;
     }
-}
-
-.masonry-slider {
-    .slick-slider .slick-track {
-        cursor: grab;
+    
+    .elementor-sticky--active {
+        background-color: rgba(0, 0, 0, .5);
     }
-    .slick-slider .slick-track:active {
-        cursor: grabbing;
-    }
-    .slick-initialized .slick-slide {
-        width: auto !important;
-    }
-    .elementor-slick-slider .slick-slide img {
-        height: 520px;
-    }
-}
-
-.parallax-quote-wrapper {
-    font-size: 2em;
-    .david-quote-text {
-        @include david-quote-text;
-        color: #fff;
-        letter-spacing: 0px;
-    }
-    .david-quote-author {
-        @include david-quote-author;
-        color: #fff;
-        font-size: .7em;
-    }
-    span.david-quote-author:after {
-        @include quote-bar;
-        border-bottom-color: #fff;
-    }
-}
-
-.connect-btn a {
-    padding: 15px 55px !important;
-    span {
-        font-family: $dt-headers !important;
-        text-transform: lowercase;
-        letter-spacing: 0px;
-    }
-}
-
-.david-btn a {
-    @include david-btn;
-    span {
-        font-family: $dt-headers !important;
-        text-transform: lowercase !important;
-    }
-}
-
-.planning-design-copy {
-    font-weight: 300;
-    letter-spacing: 0px;
-}
-
-.collections-copy-home {
-    font-weight: 300;
-    letter-spacing: 0px;
-}
-
-// Event Galleries Styles
-.alm-gallery-img {
-    margin-bottom: 35px;
-}
-
-.event-post-details {
-    .post-info__item--type-date {
+    
+    // Top Bar Styles
+    a.top-bar-link,
+    a.top-bar-link:visited {
+        font-size: 15px;
         color: $dt-gray;
+        font-weight: 400 !important;
+        letter-spacing: 2px;
     }
-    .elementor-post-info__item-prefix {}
-    color: $dt-gray !important;
-    &:hover {
-        color: $dt-dark-blue !important;
+    
+    a.top-bar-link:hover {
+        color: $dt-dark-blue;
     }
-}
-
-// Load More Button Styles
-.alm-load-more-btn.more {
-    display: block;
-    width: 100%;
-    background-color: rgba(0, 0, 0, 0);
-    border-top: 1px solid $dt-gray;
-    border-bottom: 1px solid $dt-gray;
-    color: $dt-gray;
-    &:hover {
-        background-color: $dt-gray;
+    
+    // Footer Styles
+    .footer-vsg-link {
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
         color: #fff;
+        p.footer-vsg-link-text {
+            span {
+                font-weight: 400;
+                font-size: 15px;
+            }
+            float: left;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 2px;
+            margin-bottom: 0px;
+            margin-right: 15px;
+        }
+        a.footer-vsg-link-logo {
+            float: left;
+            img {
+                max-width: 150px;
+                vertical-align: middle;
+            }
+        }
     }
-}
-
-.elementor-nav-menu li a.elementor-item:after {
-    width: 10px;
-    position: absolute;
-    left: 45%;
-}
-
-.elementor-nav-menu li a {
-    font-weight: 400 !important;
-}
+    
+    // Home Slider Styles
+    // First Slide Styles Begin
+    #slick-slide00 {
+        .slick-slide-bg {
+            background-position: 50% 35%;
+        }
+        .slick-slide-inner .elementor-slide-content {
+            margin-right: 60%;
+            margin-left: 10%;
+        }
+    }
+    
+    // First Slide Styles End
+    // Second Slide Styles
+    #slick-slide01 {
+        .slick-slide-bg {
+            background-position: top;
+        }
+        .slick-slide-inner .elementor-slide-content {
+            margin-right: 25%;
+            margin-left: 45%
+        }
+    }
+    
+    // Second Slide Styles End
+    // Third Slide Styles Begin
+    #slick-slide02 {
+        .slick-slide-inner .elementor-slide-content .elementor-slide-description {
+            font-size: 1.5em;
+        }
+    }
+    
+    .dream-bigger-section {
+        background-position: 83% -19.3% !important;
+    }
+    
+    .home-slider {
+        .david-quote-author {
+            @include david-quote-author;
+            font-size: .7em;
+        }
+    }
+    
+    .home-box-quote {
+        font-size: 2em;
+        .david-quote-text {
+            font-family: $dt-headers;
+            color: $dt-dark-blue;
+            letter-spacing: 0px;
+            margin-bottom: 15px;
+        }
+        .david-quote-author {
+            font-family: $dt-body;
+            color: $dt-gold;
+            text-transform: uppercase;
+            font-size: .7em !important;
+            font-weight: 500 !important;
+            letter-spacing: 2px !important;
+        }
+        span.david-quote-author:after {
+            @include quote-bar;
+            border-bottom-color: $dt-gold;
+        }
+    }
+    
+    .masonry-slider {
+        .slick-slider .slick-track {
+            cursor: grab;
+        }
+        .slick-slider .slick-track:active {
+            cursor: grabbing;
+        }
+        .slick-initialized .slick-slide {
+            width: auto !important;
+        }
+        .elementor-slick-slider .slick-slide img {
+            height: 520px;
+        }
+    }
+    
+    .parallax-quote-wrapper {
+        font-size: 2em;
+        .david-quote-text {
+            @include david-quote-text;
+            color: #fff;
+            letter-spacing: 0px;
+        }
+        .david-quote-author {
+            @include david-quote-author;
+            color: #fff;
+            font-size: .7em;
+        }
+        span.david-quote-author:after {
+            @include quote-bar;
+            border-bottom-color: #fff;
+        }
+    }
+    
+    .connect-btn a {
+        padding: 15px 55px !important;
+        span {
+            font-family: $dt-headers !important;
+            text-transform: lowercase;
+            letter-spacing: 0px;
+        }
+    }
+    
+    .david-btn a {
+        @include david-btn;
+        span {
+            font-family: $dt-headers !important;
+            text-transform: lowercase !important;
+        }
+    }
+    
+    .planning-design-copy {
+        font-weight: 300;
+        letter-spacing: 0px;
+    }
+    
+    .collections-copy-home {
+        font-weight: 300;
+        letter-spacing: 0px;
+    }
+    
+    // Event Galleries Styles
+    .alm-gallery-img {
+        margin-bottom: 35px;
+    }
+    
+    .event-post-details {
+        .post-info__item--type-date {
+            color: $dt-gray;
+        }
+        .elementor-post-info__item-prefix {
+            color: $dt-gray !important;
+            &:hover {
+                color: $dt-dark-blue !important;
+            }
+        }
+    }
+    
+    // Load More Button Styles
+    .alm-load-more-btn.more {
+        display: block;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0);
+        border-top: 1px solid $dt-gray;
+        border-bottom: 1px solid $dt-gray;
+        color: $dt-gray;
+        font-family: $dt-headers;
+        text-transform: lowercase;
+        transition: 1s;
+        &:hover {
+            font-size: 1.2em;
+        }
+    }
+    
+    .elementor-nav-menu li a.elementor-item:after {
+        width: 10px;
+        position: absolute;
+        left: 45%;
+    }
+    
+    .elementor-nav-menu li a {
+        font-weight: 400 !important;
+    }
+    
+    .elementor-post__read-more {
+        display: inline-block;
+        @include david-btn;
+        background: $dt-light-gray;
+        font-size: 14px;
+        padding: 10px 40px !important;
+    }
+    
+    .elementor-post__meta-data span {
+        font-family: $dt-headers;
+    }
+    
+    // Blog Styles
+    .sb_instagram_header {
+        display: none;
+    }
+    
+    #sbi_load {
+        display: none;
+    }
+    
+    #sbi_images {
+        padding: 0px;
+    }
+    
+    .widget-title {
+        margin-bottom: 30px;
+        font-size: 20px;
+        line-height: 1.5;
+        font-weight: 400;
+        width: 100%;
+        text-transform: none;
+        text-align: center;
+        background: $dt-light-gray;
+        color: #000;
+        padding: 15px;
+    }
+    
+    .elementor-widget-container {
+        text-align: center;
+    }
+    
+    .elementor-widget-container a {
+        color: #000;
+        &:hover {
+            color: $dt-gold;
+        }
+    }

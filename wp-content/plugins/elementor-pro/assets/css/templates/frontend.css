@@ -1923,6 +1923,10 @@ body.rtl.woocommerce-page div.product .elementor-widget-woocommerce-product-imag
   display: inline-block;
   font-weight: normal; }
 
+.elementor-menu-cart--empty-indicator-hide .elementor-menu-cart__toggle .elementor-button .elementor-button-icon[data-counter]:before {
+  content: none;
+  display: none; }
+
 .elementor-menu-cart__container {
   transform: scale(1);
   overflow: hidden;

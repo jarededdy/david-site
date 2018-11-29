@@ -90,11 +90,6 @@ abstract class Theme_Document extends Library_Document {
 			$classes .= ' elementor-location-' . $location;
 		}
 
-		if ( is_singular() ) {
-			$post_classes = get_post_class( '', get_the_ID() );
-			$classes .= ' ' . implode( ' ', $post_classes );
-		}
-
 		return $classes;
 	}
 

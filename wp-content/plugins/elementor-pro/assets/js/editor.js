@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.2.0 - 19-11-2018 */
+/*! elementor-pro - v2.2.3 - 29-11-2018 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -1624,16 +1624,17 @@ module.exports = function () {
 	var self = this;
 
 	self.onPanelShow = function (panel) {
-		var templateIdControl = panel.content.currentView.collection.findWhere({ name: 'template_id' });
-		var templateIdInput = panel.content.currentView.children.findByModelCid(templateIdControl.cid);
+		var model = panel.content.currentView.collection.findWhere({ name: 'template_id' });
+		self.templateIdView = panel.content.currentView.children.findByModelCid(model.cid);
 
-		// Change Edit link on change template.
-		templateIdInput.on('input:change', self.onTemplateIdChange).trigger('input:change');
+		// Change Edit link on render & on change template.
+		self.templateIdView.elementSettingsModel.on('change', self.onTemplateIdChange);
+		self.templateIdView.on('render', self.onTemplateIdChange);
 	};
 
 	self.onTemplateIdChange = function () {
-		var templateID = this.options.elementSettingsModel.attributes.template_id,
-		    $editButton = this.$el.find('.elementor-edit-template');
+		var templateID = self.templateIdView.elementSettingsModel.get('template_id'),
+		    $editButton = self.templateIdView.$el.find('.elementor-edit-template');
 
 		if (!templateID) {
 			$editButton.remove();
@@ -1652,7 +1653,7 @@ module.exports = function () {
 				html: '<i class="fa fa-pencil" /> ' + ElementorProConfig.i18n.edit_template
 			});
 
-			this.$el.find('.elementor-control-input-wrapper').after($editButton);
+			self.templateIdView.$el.find('.elementor-control-input-wrapper').after($editButton);
 		}
 	};
 

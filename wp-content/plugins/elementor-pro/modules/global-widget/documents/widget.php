@@ -13,6 +13,7 @@ class Widget extends Library_Document {
 		$properties = parent::get_properties();
 
 		$properties['show_in_library'] = false;
+		$properties['is_editable'] = false;
 
 		return $properties;
 	}
