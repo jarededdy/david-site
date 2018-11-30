@@ -1,6 +1,6 @@
     // Sass Written by: Jared Eddy - https://jarededdy.io
     // Importing David Tutera Brand Fonts
-    @import url('https://fonts.googleapis.com/css?family=Oswald:300,500|Playfair+Display');
+    @import url('https://fonts.googleapis.com/css?family=Roboto:300,500|Playfair+Display');
     // Declaring David Tutera Brand Styles
     $dt-gray: #7a7e83;
     $dt-dark-blue: #073f5d;
@@ -10,7 +10,7 @@
     $dt-light-gray:#f0ede8;
     $dt-headers: 'Playfair Display',
     serif;
-    $dt-body:'Oswald',
+    $dt-body:'Roboto',
     sans-serif;
     // Setting David Tutera Brand Fonts
     html body {
@@ -319,7 +319,7 @@
     
     .widget-title {
         margin-bottom: 30px;
-        font-size: 20px;
+        font-size: 1em;
         line-height: 1.5;
         font-weight: 400;
         width: 100%;
@@ -327,7 +327,7 @@
         text-align: center;
         background: $dt-light-gray;
         color: #000;
-        padding: 15px;
+        padding: 10px;
     }
     
     .elementor-widget-sidebar {
@@ -335,7 +335,7 @@
     }
     
     .elementor-widget-sidebar a {
-        color: #000;
+        color: $dt-dark-blue;
         &:hover {
             color: $dt-gold;
         }
