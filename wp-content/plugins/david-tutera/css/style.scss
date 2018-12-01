@@ -1,6 +1,6 @@
     // Sass Written by: Jared Eddy - https://jarededdy.io
     // Importing David Tutera Brand Fonts
-    @import url('https://fonts.googleapis.com/css?family=Roboto:300,500|Playfair+Display');
+    @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,500|Playfair+Display:300|Oswald:400');
     // Declaring David Tutera Brand Styles
     $dt-gray: #7a7e83;
     $dt-dark-blue: #073f5d;
@@ -10,7 +10,7 @@
     $dt-light-gray:#f0ede8;
     $dt-headers: 'Playfair Display',
     serif;
-    $dt-body:'Roboto',
+    $dt-body:'Roboto Condensed',
     sans-serif;
     // Setting David Tutera Brand Fonts
     html body {
@@ -27,6 +27,9 @@
         span {
             font-family: $dt-body;
             font-weight: 300;
+        }
+        p {
+            color: #7a7e83;
         }
         strong {
             font-weight: 700 !important;
@@ -49,6 +52,19 @@
     }
     
     // General Website Element Styles
+    html {
+        scroll-behavior: smooth!important;
+    }
+    
+     :target:before {
+        content: "";
+        display: block;
+        height: 75px;
+        /* fixed header height*/
+        margin: -75px 0 0;
+        /* negative fixed header height */
+    }
+    
     @mixin quote-bar {
         content: ""; // This is required to make the ::after psuedo element work
         display: block; // This makes sure it shows up
@@ -64,7 +80,7 @@
     }
     
     @mixin david-quote-author {
-        font-family: $dt-body;
+        font-family: 'Oswald';
         text-transform: uppercase;
         font-weight: 500;
         letter-spacing: 2px;
@@ -94,6 +110,11 @@
     
     a.top-bar-link:hover {
         color: $dt-dark-blue;
+    }
+    
+    .elementor-nav-menu__container a {
+        font-family: 'Oswald';
+        font-weight: 400;
     }
     
     // Footer Styles
@@ -131,8 +152,8 @@
             background-position: 50% 35%;
         }
         .slick-slide-inner .elementor-slide-content {
-            margin-right: 60%;
-            margin-left: 10%;
+            margin-right: 20%;
+            margin-left: 18%;
         }
     }
     
@@ -143,7 +164,7 @@
             background-position: top;
         }
         .slick-slide-inner .elementor-slide-content {
-            margin-right: 25%;
+            margin-right: 20%;
             margin-left: 45%
         }
     }
@@ -162,8 +183,13 @@
     
     .home-slider {
         .david-quote-author {
+            margin-top: 30px;
+            display: block;
             @include david-quote-author;
-            font-size: .7em;
+            font-size: .58em;
+        }
+        span.david-quote-author:after {
+            padding-top: 15px;
         }
     }
     
@@ -176,7 +202,7 @@
             margin-bottom: 15px;
         }
         .david-quote-author {
-            font-family: $dt-body;
+            font-family: 'Oswald';
             color: $dt-gold;
             text-transform: uppercase;
             font-size: .7em !important;
@@ -323,7 +349,6 @@
         line-height: 1.5;
         font-weight: 400;
         width: 100%;
-        text-transform: none;
         text-align: center;
         background: $dt-light-gray;
         color: #000;
@@ -332,6 +357,11 @@
     
     .elementor-widget-sidebar {
         text-align: center;
+        .widget-title {
+            text-transform: lowercase;
+            font-size: 1em;
+            color: $dt-dark-blue;
+        }
     }
     
     .elementor-widget-sidebar a {
@@ -339,4 +369,36 @@
         &:hover {
             color: $dt-gold;
         }
+    }
+    
+    .elementor-20 .elementor-element.elementor-element-d2e6be5 .elementor-repeater-item-3f09911 .slick-slide-bg {
+        background-position: 50% 80%;
+    }
+    
+    .elementor-20 .elementor-element.elementor-element-d2e6be5 .elementor-repeater-item-3f09911 .slick-slide-inner .elementor-slide-content {
+        margin-top: 17% !important;
+    }
+    
+    .elementor-20 .elementor-element.elementor-element-d2e6be5 .elementor-slide-button {
+        margin-top: 20px;
+        padding: 15px 55px;
+    }
+    
+    .elementor-20 .elementor-element.elementor-element-d2e6be5 .elementor-repeater-item-7078fb0 .slick-slide-bg {
+        background-position: 50% 80% !important;
+    }
+    
+    .elementor-portfolio__filter li:hover:after,
+    .elementor-portfolio__filter li.elementor-active:after {
+        content: "";
+        background-color: $dt-gray;
+        height: 3px;
+        width: 100%;
+        left: 0;
+        z-index: 2;
+        width: 10px;
+        position: absolute;
+        left: 45%;
+        display: inline;
+        bottom: 0;
     }

@@ -94,3 +94,21 @@ require get_template_directory() . '/inc/structure/header.php';
 require get_template_directory() . '/inc/structure/navigation.php';
 require get_template_directory() . '/inc/structure/post-meta.php';
 require get_template_directory() . '/inc/structure/sidebars.php';
+
+add_action( 'wp_footer', function() {
+	if ( ! defined( 'ELEMENTOR_VERSION' ) ) {
+		return;
+	}
+	?>
+	<script>
+		jQuery( function( $ ) {
+			// Add space for Elementor Menu Anchor link
+			$( window ).on( 'elementor/frontend/init', function() {
+				elementorFrontend.hooks.addFilter( 'frontend/handlers/menu_anchor/scroll_top_distance', function( scrollTop ) {
+					return scrollTop - 75;
+				} );
+			} );
+		} );
+	</script>
+	<?php
+} );
