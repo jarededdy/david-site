@@ -389,19 +389,19 @@
         background-position: 50% 80% !important;
     }
     
-    .elementor-portfolio__filter li:hover:after,
-    .elementor-portfolio__filter li.elementor-active:after {
+    .elementor-portfolio__filters li:after {
         content: "";
-        background-color: $dt-gray;
         height: 3px;
-        width: 100%;
-        left: 0;
-        z-index: 2;
+        z-index: 99999;
         width: 10px;
-        position: absolute;
-        left: 45%;
-        display: inline;
-        bottom: 0;
+        position: relative;
+        margin: 0 auto;
+        display: block;
+    }
+    
+    .elementor-portfolio__filters li.elementor-active:after,
+    .elementor-portfolio__filters li:hover::after {
+        background-color: $dt-gray;
     }
     
     .elementor-post__read-more:hover {
