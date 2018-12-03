@@ -88,6 +88,7 @@ a.top-bar-link:hover {
 }
 
 .footer-vsg-link p.footer-vsg-link-text {
+  color: #fff;
   float: left;
   font-size: 15px;
   font-weight: 400;
@@ -383,4 +384,9 @@ a.top-bar-link:hover {
   left: 45%;
   display: inline;
   bottom: 0;
+}
+
+.elementor-post__read-more:hover {
+  color: #fff !important;
+  background-color: #073f5d;
 }
