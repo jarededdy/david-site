@@ -1,0 +1,26 @@
+.elementor-1362 .elementor-element.elementor-element-7737456{background-color:#073f5d;transition:background 0.3s, border 0.3s, border-radius 0.3s, box-shadow 0.3s;}.elementor-1362 .elementor-element.elementor-element-7737456 > .elementor-background-overlay{transition:background 0.3s, border-radius 0.3s, opacity 0.3s;}/* Start custom CSS for html, class: .elementor-element-46b24dd */.elementor-1362 .elementor-element.elementor-element-46b24dd p {
+    margin-bottom:0px;
+}
+.elementor-1362 .elementor-element.elementor-element-46b24dd a {
+    color: #fff;
+    font-weight: 400;
+    font-size: 15px;
+    letter-spacing: 2px;
+    font-family: 'Oswald', san-serif;
+}
+.elementor-1362 .elementor-element.elementor-element-46b24dd a img {
+    width:35px;
+}
+.elementor-1362 .elementor-element.elementor-element-46b24dd a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.elementor-1362 .elementor-element.elementor-element-46b24dd a:hover {
+   text-decoration:underline;
+}
+.elementor-1362 .elementor-element.elementor-element-46b24dd {
+    margin:0 auto;
+    text-align:center;
+    text-transform:uppercase;
+}/* End custom CSS */

@@ -145,7 +145,7 @@ class GeneratePress_Site {
 		add_action( "wp_ajax_generate_import_widgets_{$this->slug}",		array( $this, 'import_widgets' ), 10, 0 );
 
 		// Don't do the WC setup. This wouldn't be necessary if they used an activation hook.
-		add_filter( 'woocommerce_enable_setup_wizard', '__return_false', 5 );
+		add_filter( 'woocommerce_prevent_automatic_wizard_redirect', '__return_true' );
 
 	}
 

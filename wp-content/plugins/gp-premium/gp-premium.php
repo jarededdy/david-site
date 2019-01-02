@@ -3,7 +3,7 @@
 Plugin Name: GP Premium
 Plugin URI: https://generatepress.com
 Description: The entire collection of GeneratePress premium modules.
-Version: 1.7.5
+Version: 1.7.7
 Author: Tom Usborne
 Author URI: https://tomusborne.com
 License: GNU General Public License v2 or later
@@ -16,7 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Set our version
-define( 'GP_PREMIUM_VERSION', '1.7.5' );
+define( 'GP_PREMIUM_VERSION', '1.7.7' );
 
 // Set our library directory
 define( 'GP_LIBRARY_DIRECTORY', plugin_dir_path( __FILE__ ) . 'library/' );

@@ -176,6 +176,10 @@ if ( ! function_exists( 'generate_sections_metabox_scripts' ) ) {
 
 				wp_enqueue_media();
 
+				if ( function_exists( 'wp_enqueue_editor' ) ) {
+					wp_enqueue_editor();
+				}
+
 				// special script for dealing with repeating textareas- needs to run AFTER all the tinyMCE init scripts, so make 'editor' a requirement
 				wp_enqueue_script( 'generate-sections-metabox', plugin_dir_url( __FILE__ ) . 'js/generate-sections-metabox.js', array( 'jquery', 'jquery-ui-core', 'jquery-ui-widget', 'jquery-ui-mouse', 'jquery-ui-sortable', 'editor', 'media-upload', 'wp-color-picker' ), GENERATE_SECTIONS_VERSION, true );
 

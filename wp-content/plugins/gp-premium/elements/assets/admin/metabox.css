@@ -1,5 +1,6 @@
 .no-element-type #titlediv,
 .no-element-type h1.wp-heading-inline,
+.no-element-type h1.wp-heading-inline + .page-title-action,
 .no-element-type #submitdiv,
 .no-element-type .postbox:not(#generate_premium_elements),
 .no-element-type .notice,

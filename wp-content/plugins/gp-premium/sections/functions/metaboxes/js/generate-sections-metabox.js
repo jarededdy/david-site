@@ -160,8 +160,15 @@ var Generate_Sections = {
          * Merge the default TinyMCE settings
          */
         tinyMCEsettings: function() {
-            // get the #content"s tinyMCE settings or use default
-            var init_settings = typeof tinyMCEPreInit == "object" && "mceInit" in tinyMCEPreInit && "content" in tinyMCEPreInit.mceInit ? tinyMCEPreInit.mceInit.content : this.tmc_defaults;
+            var init_settings = '';
+
+            if ( typeof tinyMCEPreInit == "object" && "mceInit" in tinyMCEPreInit && "content" in tinyMCEPreInit.mceInit ) {
+                init_settings = tinyMCEPreInit.mceInit.content;
+            } else if ( typeof wp.editor.getDefaultSettings !== "undefined" ) {
+                init_settings = wp.editor.getDefaultSettings().tinymce;
+            } else {
+                init_settings = this.tmc_defaults
+            }
 
             // get the #content"s quicktags settings or use default
             var qt_settings = typeof tinyMCEPreInit == "object" && "qtInit" in tinyMCEPreInit && "content" in tinyMCEPreInit.qtInit ? tinyMCEPreInit.qtInit.content : this.qt_defaults;
@@ -172,6 +179,11 @@ var Generate_Sections = {
                 wp_autoresize_on: false,
                 cache_suffix: "",
                 min_height: 400,
+                wpautop: true,
+                indent: false,
+                toolbar1: "formatselect,bold,italic,bullist,numlist,blockquote,alignleft,aligncenter,alignright,link,wp_more,spellchecker,wp_adv",
+                toolbar2: "strikethrough,hr,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo,wp_help",
+                max_height: 500
             }
 
             // merge our settings with WordPress" and store for later use
@@ -783,7 +795,11 @@ var Generate_Sections = {
                 'overflow': 'hidden'
             });
 
-			$( '.edit-post-layout__content .edit-post-visual-editor' ).hide();
+			$( '.editor-block-list__layout' ).hide();
+			$( '.edit-post-layout__content .edit-post-visual-editor' ).css( {
+				'flex-grow': 'unset',
+				'flex-basis': '0'
+			} );
 			$( '.edit-post-layout__metaboxes:not(:empty)' ).css( 'border-top', '0' );
 
             // Show the sections
@@ -817,7 +833,11 @@ var Generate_Sections = {
                 'height': 'auto'
             });
 
-			$( '.edit-post-layout__content .edit-post-visual-editor' ).show();
+			$( '.editor-block-list__layout' ).show();
+			$( '.edit-post-layout__content .edit-post-visual-editor' ).css( {
+				'flex-grow': '',
+				'flex-basis': ''
+			} );
 			$( '.edit-post-layout__metaboxes:not(:empty)' ).css( 'border-top', '' );
 
             // Hide the sections

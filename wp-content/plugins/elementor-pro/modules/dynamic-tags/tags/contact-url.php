@@ -306,7 +306,7 @@ class Contact_URL extends Tag {
 		if ( $all_day ) {
 			return date( 'Ymd\/Ymd', $time );
 		}
-		return date( 'Ymd\THis\Z', $time );
+		return date( 'Ymd\THis', $time );
 	}
 
 	private function date_to_ics( $date ) {
@@ -373,11 +373,11 @@ class Contact_URL extends Tag {
 		];
 
 		if ( ! empty( $settings['event_start_date'] ) ) {
-			$build_parts['st'] = urlencode( date( 'Y-m-d\This', strtotime( $settings['event_start_date'] ) ) );
+			$build_parts['st'] = urlencode( date( 'Ymd\This', strtotime( $settings['event_start_date'] ) ) );
 		}
 
 		if ( ! empty( $settings['event_end_date'] ) ) {
-			$build_parts['et'] = urlencode( date( 'Y-m-d\This', strtotime( $settings['event_end_date'] ) ) );
+			$build_parts['et'] = urlencode( date( 'Ymd\This', strtotime( $settings['event_end_date'] ) ) );
 		}
 
 		return add_query_arg( $build_parts, $link );

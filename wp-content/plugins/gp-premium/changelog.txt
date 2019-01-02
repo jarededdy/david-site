@@ -1,5 +1,15 @@
 == changelog ==
 
+= 1.7.7 =
+* Sites: Fix failed content import in specific PHP versions
+
+= 1.7.6 =
+* Elements: Hide Add New button when opening saved Element with no type
+* Sections: Show page title in Gutenberg when Sections are active
+* Sections: Fix relative image URLs inside the Section editor
+* Sites: Fix failed content/widget import in WP 5.0.1/4.9.9
+* Sites: Fix no access to WooCommerce setup wizard
+
 = 1.7.5 =
 * Colors: Improve block editor button color preview
 * Menu Plus: Mobile menu items hidden behind content with higher z-index when sticky

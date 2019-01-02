@@ -1,4 +1,4 @@
-/*! elementor-pro - v2.2.3 - 29-11-2018 */
+/*! elementor-pro - v2.3.1 - 19-12-2018 */
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
 /******/ 	var installedModules = {};
@@ -177,8 +177,15 @@ module.exports = elementor.modules.Module.extend({
 	},
 
 	addControlSpinner: function addControlSpinner(name) {
-		this.getView(name).$el.find(':input').attr('disabled', true);
-		this.getView(name).$el.find('.elementor-control-title').after('<span class="elementor-control-spinner"><i class="fa fa-spinner fa-spin"></i>&nbsp;</span>');
+		var $el = this.getView(name).$el,
+		    $input = $el.find(':input');
+
+		if ($el.find(':input').attr('disabled')) {
+			return;
+		}
+
+		$input.attr('disabled', true);
+		$el.find('.elementor-control-title').after('<span class="elementor-control-spinner"><i class="fa fa-spinner fa-spin"></i>&nbsp;</span>');
 	},
 
 	removeControlSpinner: function removeControlSpinner(name) {
@@ -1702,7 +1709,7 @@ module.exports = function () {
 		var customCSS = elementor.settings.page.model.get('custom_css');
 
 		if (customCSS) {
-			customCSS = customCSS.replace(/selector/g, '.elementor-page-' + elementor.config.document.id);
+			customCSS = customCSS.replace(/selector/g, elementor.config.settings.page.cssWrapperSelector);
 			elementor.settings.page.getControlsCSS().elements.$stylesheetElement.append(customCSS);
 		}
 	};

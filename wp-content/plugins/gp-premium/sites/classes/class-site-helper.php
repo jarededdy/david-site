@@ -674,10 +674,16 @@ class GeneratePress_Sites_Helper {
 	 * @return array Merged types.
 	 */
 	public static function mime_types( $mimes ) {
+		$xml_type = 'text/xml';
+
+		if ( version_compare( PHP_VERSION, '7.2', '<' ) ) {
+			$xml_type = 'application/xml';
+		}
+
 		$mimes = array_merge(
 			$mimes, array(
-				'xml' => 'application/xml',
-				'wie' => 'application/json',
+				'xml' => $xml_type,
+				'wie' => 'text/plain',
 				'svg' => 'image/svg+xml',
 				'svgz' => 'image/svg+xml'
 			)

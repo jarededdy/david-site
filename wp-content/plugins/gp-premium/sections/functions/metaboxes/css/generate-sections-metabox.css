@@ -11,6 +11,10 @@ body {
 	display: block !important;
 }
 
+.generate_sections_control {
+	padding-top: 8px;
+}
+
 .generate-sections-enabled #postdivrich {
 	opacity: 0;
 	height: 0;
@@ -113,6 +117,10 @@ body {
 
 textarea#generate-sections-editor {
 	border:0;
+}
+
+#generate-sections-editor_ifr {
+	min-height: 400px;
 }
 
 a#generate-add-section, a#generate-delete-sections {
